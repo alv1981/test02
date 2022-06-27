@@ -46,8 +46,11 @@ pipeline {
                                                 script: '''
                                                 import jenkins.model.*
                                                 if (Env.equals("dev")){
+                                                    def lista() {
+                                                       return ["ami-sd2345sd", "ami-asdf245sdf", "ami-asdf3245sd"]
+                                                     }
                                                     def MyClass = load "src/MyClass.groovy"
-                                                    return MyClass.lista()
+                                                    return lista()
                                                 }
                                                 else if(Env.equals("stage")){
                                                     return["ami-sd34sdf", "ami-sdf345sdc", "ami-sdf34sdf"]
