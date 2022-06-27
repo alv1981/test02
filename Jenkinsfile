@@ -44,8 +44,10 @@ pipeline {
                                                 classpath: [], 
                                                 sandbox: false, 
                                                 script: '''
+                                                import jenkins.model.*
                                                 if (Env.equals("dev")){
-                                                    return["ami-sd2345sd", "ami-asdf245sdf", "ami-asdf3245sd"]
+                                                    def MyClass = load "src/MyClass.groovy"
+                                                    return MyClass.testMethod()
                                                 }
                                                 else if(Env.equals("stage")){
                                                     return["ami-sd34sdf", "ami-sdf345sdc", "ami-sdf34sdf"]
