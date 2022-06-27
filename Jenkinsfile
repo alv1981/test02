@@ -49,7 +49,7 @@ pipeline {
                                                     def lista() {
                                                        return ["ami-sd2345sd", "ami-asdf245sdf", "ami-asdf3245sd"]
                                                      }
-                                                    def MyClass = load "src/MyClass.groovy"
+                                                    //def MyClass = load "src/MyClass.groovy"
                                                     return lista()
                                                 }
                                                 else if(Env.equals("stage")){
